@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <employees>
+        <email>nowak@gmail.com</email>
+        <name>Jan</name>
+        <salary>10000.0</salary>
+        <surname>Nowak</surname>
+    </employees>
+    <employees>
+        <email>kowalski@gmail.com</email>
+        <name>Jan</name>
+        <salary>8000.0</salary>
+        <surname>Kowalski</surname>
+    </employees>
+</company>
