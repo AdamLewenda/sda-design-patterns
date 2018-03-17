@@ -14,14 +14,14 @@ public class Playground {
 
     public static void main(String[] args) {
 
-        foo("piotr");
+        //foo("piotr");
 
         List<String> names = Arrays.asList("Piotr", "Jan", "Ala");
 
 
         for (int i = 0; i < names.size(); i++) {
             String s = names.get(i);
-            System.out.println();
+            System.out.println(s);
         }
 
         System.out.println("petla for each ....");
@@ -29,12 +29,22 @@ public class Playground {
             System.out.println(s);
         }
 
-
         System.out.println("Z uzyciem iteratora: .....");
         Iterator<String> iterator = names.iterator();
-        while (iterator.hasNext()){
-            String next = iterator.next();
-            System.out.println("Pobrana wartosc to: " + next);
+        while (iterator.hasNext()) {
+            String s = iterator.next();
+        }
+
+        //z uzyciem wlasnego iteratora
+        MyCollection imiona = new MyCollection();
+        imiona.addElement("Piotr");
+        imiona.addElement("Pawel");
+        imiona.addElement("Karolina");
+
+        pl.sda.poznan.iterator.Iterator<String> imionaIterator = imiona.getIterator();
+        while (imionaIterator.hasNextElement()) {
+            String elem = imionaIterator.getNextElement();
+            System.out.println(elem);
         }
     }
 }
