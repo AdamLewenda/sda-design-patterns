@@ -54,10 +54,23 @@ public class Program {
             System.out.println(currentFile.getAbsolutePath() + ">");
             System.out.println("ls - wyswietla katalogi");
             System.out.println("mkdir nazwa -> tworzy katalog o danej nazwie");
-            String operation = scanner.next();
-            switch (operation) {
+            String operation = scanner.nextLine();
+            String[] split = operation.split(" ");
+            switch (split[0]) {
                 case "ls": {
                     listFiles(currentFile);
+                    break;
+                }
+                case "mkdir": {
+                    System.out.println("Tworze katalog....");
+                    String catalogName = split[1];
+                    File newCatalog = new File(currentFile.getAbsolutePath() + "\\" + catalogName);
+                    boolean result = newCatalog.mkdir();
+                    System.out.println(result ? "Utworzono katalog" : "Nie utworzono katalogu");
+                    break;
+                }
+                default: {
+                    System.out.println("Nieznane polecenie");
                     break;
                 }
             }
